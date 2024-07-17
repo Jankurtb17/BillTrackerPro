@@ -1,11 +1,13 @@
 <script setup lang="ts">
 // import HelloWorld from './components/HelloWorld.vue'
 import WelcomePage from "./views/WelcomePage.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
   <div class="main-page">
-    <WelcomePage />
+    <!-- <WelcomePage /> -->
+    <RouterView name="SignIn" />
   </div>
 </template>
 
@@ -13,6 +15,4 @@ import WelcomePage from "./views/WelcomePage.vue";
 .main-page {
   height: 100vh;
 }
-
-
 </style>

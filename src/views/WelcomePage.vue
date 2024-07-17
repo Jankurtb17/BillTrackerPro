@@ -15,8 +15,12 @@
       <p class="text-3xl">Manage All Utility Bills</p>
     </div>
     <div class="flex flex-col gap-5 lg:items-center">
-      <button class="btn btn-lg btn-primary lg:w-4/12">Login</button>
-      <button class="btn btn-lg btn-outline lg:w-4/12">Register</button>
+      <router-link to="/login" class="btn btn-lg btn-primary lg:w-4/12"
+        >Login</router-link
+      >
+      <router-link to="/register" class="btn btn-lg btn-outline lg:w-4/12"
+        >Register</router-link
+      >
     </div>
   </div>
 </template>
