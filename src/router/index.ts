@@ -9,6 +9,9 @@ const router = createRouter({
       components: {
         SignIn: () => import("@/views/WelcomePage.vue"),
       },
+      meta: {
+        isSignin: true
+      }
     },
     {
       path: "/login",
@@ -16,6 +19,9 @@ const router = createRouter({
       components: {
         SignIn: () => import("@/views/LoginPage.vue"),
       },
+      meta: {
+        isSignin: true
+      }
     },
     {
       path: "/register",
@@ -23,6 +29,19 @@ const router = createRouter({
       components: {
         SignIn: () => import("@/views/RegisterPage.vue"),
       },
+      meta: {
+        isSignin: true
+      }
+    },
+    {
+      path: "/dashboard",
+      name: "MainDashboard",
+      components: {
+        Dashboard: () => import("@/views/Base/AppShell.vue"),
+      },
+      meta: {
+        isSignin: false
+      }
     },
   ],
 });
