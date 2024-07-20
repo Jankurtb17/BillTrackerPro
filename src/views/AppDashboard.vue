@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard h-full w-full">
-    <div class=" welcome-txt px-5 py-5">
-      <h1 class="text-4xl text-black">Hi, Jan Kurt Bayaras!</h1>
-      <span class="text-xl">Welcome Back</span>
+    <div class=" welcome-txt px-5 pt-5">
+      <h1 class="text-3xl text-black">Hi, Jan Kurt Bayaras!</h1>
+      <span class="text-xl text-gray-500">Welcome Back</span>
     </div>
     
     <div class="px-5">
@@ -32,19 +32,20 @@
 
     <div class="px-5">
       <div class="card border shadow-xl mt-4 payment">
-        <div class="card-body text-center">
-          <div class="flex justify-evenly items-center gap-3">
+        <div class="card-body text-gray-700 font-bold">
+          <h1 class="text-md">Utility Bills</h1>
+          <div class="flex justify-evenly items-center gap-3 text-center">
             <DashboardIcons :icon="faHouse" label="Rent"/>
             <DashboardIcons :icon="faCreditCard" label="Credit"/>
             <DashboardIcons :icon="faBolt" label="Electric"/>
-            <DashboardIcons :icon="faWater" label="Credit"/>
+            <DashboardIcons :icon="faWater" label="Water"/>
           </div>
         </div>  
       </div>
     </div>
 
     <div class="p-1">
-      <Transactions />
+      <TransactionList />
     </div>
   </div>
 </template>
@@ -55,7 +56,7 @@ import CardItem from "../components/Dashboard/CardItem.vue"
 import { faHouse, faWater, faBolt, faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import DashboardIcons from "../components/Dashboard/DashboardIcons.vue"
-import Transactions from "../components/Dashboard/Transactions.vue"
+import TransactionList from "../components/Dashboard/TransactionList.vue"
 const number = ref('8000');
 const showDots = ref(false);
 

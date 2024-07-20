@@ -15,7 +15,9 @@ import {
   faMoneyBill1,
   faCreditCard,
   faBolt,
-  faWater
+  faWater,
+  faSliders,
+  faCirclePlus
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faGoogle,
@@ -33,7 +35,9 @@ library.add(
   faMoneyBill1,
   faCreditCard,
   faBolt,
-  faWater
+  faWater,
+  faSliders,
+  faCirclePlus
 );
 
 export default FontAwesomeIcon;

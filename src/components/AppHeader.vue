@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-200 ">
+  <div class="navbar bg-base-200 sm:hidden">
     <div class="flex flex-row justify-between w-full ">
       <div class="flex items-center">
         <label for="my-drawer-3" class="lg:hidden btn btn-square btn-ghost mr-5">
