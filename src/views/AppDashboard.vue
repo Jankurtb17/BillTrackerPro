@@ -6,41 +6,21 @@
     </div>
     
     <div class="px-5">
-      <CardItem>
-        <template #default>
-          <div class="w-full">
-            <div class="flex flex-col">
-              <div class="flex justify-between ">
-                <h2 class="text-md">Total Balance</h2>
-                <button @click="toggleEyeCon">
-                  <font-awesome-icon :icon="showDots ? 'eye-slash' : 'eye'" />
-                </button>
-              </div>
-              <div class="eyecon text-4xl flex gap-3 mt-3">
-                <span>₱</span>
-                <div v-if="showDots" class="dots">
-                  <span v-for="(dot, index) in dotsArray" :key="index">•</span>
-                </div>
-                <div v-else class="number tracking-wide"> {{ number }}</div>
-  
-              </div>
-            </div>
-          </div>
-        </template>
-      </CardItem>
+      <TotalBalance/>
     </div>
 
-    <div class="px-5">
-      <div class="card border shadow-xl mt-4 payment">
-        <div class="card-body text-gray-700 font-bold">
-          <h1 class="text-md">Utility Bills</h1>
-          <div class="flex justify-evenly items-center gap-3 text-center">
-            <DashboardIcons :icon="faHouse" label="Rent"/>
-            <DashboardIcons :icon="faCreditCard" label="Credit"/>
-            <DashboardIcons :icon="faBolt" label="Electric"/>
-            <DashboardIcons :icon="faWater" label="Water"/>
+    <div class="px-5 mt-5">
+      <div class="flex justify-between px-1">
+        <span class="text-md font-medium">Recent Billing</span>
+        <span>See all</span>
+      </div>
+      <div class="carousel carousel-center w-full space-x-4 p-4">
+        <div v-for="i in 5" :key="i">
+          <div class="carousel-item">
+            <RecentBill />
           </div>
-        </div>  
+        </div>
+
       </div>
     </div>
 
@@ -51,28 +31,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
-import CardItem from "../components/Dashboard/CardItem.vue"
-import { faHouse, faWater, faBolt, faCreditCard } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import DashboardIcons from "../components/Dashboard/DashboardIcons.vue"
+import RecentBill from "../components/Dashboard/RecentBill.vue"
 import TransactionList from "../components/Dashboard/TransactionList.vue"
-const number = ref('8000');
-const showDots = ref(false);
-
-const dotsArray = computed(() => number.value.split(''));
-
-const toggleEyeCon = () => {
-  showDots.value = !showDots.value;
-};
+import TotalBalance from "../components/Dashboard/TotalBalance.vue"
 </script>
 
 <style>
 .dashboard {
   font-family: 'Roboto', 'sans-serif'
-}
-
-.payment {
-  /* background-color: #99BC85; */
 }
 </style>

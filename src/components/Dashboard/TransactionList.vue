@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-100 mt-16 min-h-screen rounded-2xl">
+  <div class="bg-gray-100 mt-10 min-h-screen rounded-2xl">
     <div class="flex justify-between items-center p-5">
-      <span class="text-2xl">Transactions</span>
-      <span class="text-xl text-success">See all</span>
+      <span class="text-xl">Transactions</span>
+      <span class="text-md text-success">See all</span>
     </div>
     <div class="flex px-5 py-2" v-for="transaction in transactions" :key="transaction.id">
       <TransactionItem :type="transaction.type" :amount="transaction.amount" :date_posted="transaction.datePosted" />

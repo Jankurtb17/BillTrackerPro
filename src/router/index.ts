@@ -37,7 +37,17 @@ const router = createRouter({
       path: "/dashboard",
       name: "MainDashboard",
       components: {
-        Dashboard: () => import("@/views/Base/AppShell.vue"),
+        Dashboard: () => import("@/views/AppDashboard.vue"),
+      },
+      meta: {
+        isSignin: false
+      }
+    },
+    {
+      path: "/billing-list",
+      name: "BillingList",
+      components: {
+        Dashboard: () => import("@/views/RecentBilling.vue"),
       },
       meta: {
         isSignin: false
