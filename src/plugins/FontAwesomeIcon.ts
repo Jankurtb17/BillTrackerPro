@@ -17,7 +17,8 @@ import {
   faBolt,
   faWater,
   faSliders,
-  faCirclePlus
+  faCirclePlus,
+  faChevronLeft
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faGoogle,
@@ -37,7 +38,8 @@ library.add(
   faBolt,
   faWater,
   faSliders,
-  faCirclePlus
+  faCirclePlus,
+  faChevronLeft
 );
 
 export default FontAwesomeIcon;

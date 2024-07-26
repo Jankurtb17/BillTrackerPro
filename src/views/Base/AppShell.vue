@@ -2,9 +2,8 @@
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
-      <!-- <AppHeader /> -->
-      <div class="bg-white w-full min-h-screen">
-        <AppDashboard />
+      <div class="bg-white w-full min-h-screen overflow-y-auto">
+        <slot></slot>
       </div>
     </div>
     <div class="drawer-side">
@@ -16,11 +15,11 @@
         <FontAwesomeIcon :icon="faHouse" class="h-5" />
       </router-link>
 
-      <router-link to="/transactions">
+      <router-link to="/billing-list">
         <FontAwesomeIcon :icon="faCreditCard" class="h-5" />
       </router-link>
 
-      <router-link to="/add-cash">
+      <router-link to="/dashboard">
         <FontAwesomeIcon :icon="faCirclePlus" class="text-orange-600 h-9" />
       </router-link>
 
@@ -28,8 +27,8 @@
         <FontAwesomeIcon :icon="faSliders" class="h-5" />
       </router-link>
 
-      <router-link to="/profile">
-        <FontAwesomeIcon :icon="faMoon" class="h-5" />
+      <router-link to="/settings">
+        <FontAwesomeIcon :icon="faSliders" class="h-5" />
       </router-link>
     </div>
   </div>
@@ -41,7 +40,10 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import TheSidebar from "../../components/TheSidebar.vue";
 import AppDashboard from "../AppDashboard.vue"
-import {  faSun, faMoon, faHouse, faSliders, faCirclePlus, faCreditCard } from "@fortawesome/free-solid-svg-icons"
+import RecentBilling from "../RecentBilling.vue";
+import { faMoon, faHouse, faSliders, faCirclePlus, faCreditCard } from "@fortawesome/free-solid-svg-icons"
+import { useRoute } from "vue-router";
+const route = useRoute()
 </script>
 
 <style scoped>
